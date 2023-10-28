@@ -113,13 +113,13 @@ extern "C" {
             if(advertisedDevice->getName().length() != 0)
             {
               display_string.concat(advertisedDevice->getName().c_str());
-              Serial.print(advertisedDevice->getName().c_str());
+              Serial.println(advertisedDevice->getName().c_str());
               
             }
             else
             {
               display_string.concat(advertisedDevice->getAddress().toString().c_str());
-              Serial.print(advertisedDevice->getAddress().toString().c_str());
+              Serial.println(advertisedDevice->getAddress().toString().c_str());
             }
     
             #ifdef HAS_SCREEN
@@ -149,13 +149,13 @@ extern "C" {
                 if(advertisedDevice->getName().length() != 0)
                 {
                   display_string.concat(advertisedDevice->getName().c_str());
-                  Serial.print(advertisedDevice->getName().c_str());
+                  Serial.println(advertisedDevice->getName().c_str());
                   
                 }
                 else
                 {
                   display_string.concat(advertisedDevice->getAddress().toString().c_str());
-                  Serial.print(advertisedDevice->getAddress().toString().c_str());
+                  Serial.println(advertisedDevice->getAddress().toString().c_str());
                 }
 
                 if (gps_obj.getFixStatus()) {
