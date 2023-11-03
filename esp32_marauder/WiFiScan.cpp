@@ -1,4 +1,5 @@
 #include "WiFiScan.h"
+#include "BLECap.h"
 #include "lang_var.h"
 
 int num_beacon = 0;
@@ -108,7 +109,6 @@ extern "C" {
     
             display_string.concat(" ");
             Serial.print(" ");
-            
             Serial.print("Device: ");
             if(advertisedDevice->getName().length() != 0)
             {
@@ -121,15 +121,18 @@ extern "C" {
               display_string.concat(advertisedDevice->getAddress().toString().c_str());
               Serial.println(advertisedDevice->getAddress().toString().c_str());
             }
-    
+
+            String advData = bleAdvCapture(advertisedDevice);
+            Serial.println(advData);
+
             #ifdef HAS_SCREEN
               uint8_t temp_len = display_string.length();
               for (uint8_t i = 0; i < 40 - temp_len; i++)
               {
                 display_string.concat(" ");
               }
-      
-              Serial.println();
+
+
       
               while (display_obj.printing)
                 delay(1);

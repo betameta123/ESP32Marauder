@@ -381,6 +381,7 @@ void setup()
   
   Serial.println(F("CLI Ready"));
   cli_obj.RunSetup();
+  
 }
 
 
