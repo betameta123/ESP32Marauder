@@ -23,6 +23,7 @@ https://www.online-utility.org/image/convert/to/XBM
 #include "freertos/task.h"
 #include "esp_system.h"
 #include <Arduino.h>
+#include "SPIFFS.h"
 
 #ifdef HAS_GPS
   #include "GpsInterface.h"
@@ -381,7 +382,9 @@ void setup()
   
   Serial.println(F("CLI Ready"));
   cli_obj.RunSetup();
-  
+  if(!SPIFFS.begin(true)) {
+    Serial.println("Failed to mount SPIFFS");
+  }
 }
 
 
