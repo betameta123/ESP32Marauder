@@ -130,6 +130,7 @@ const char PROGMEM HELP_BT_WARDRIVE_CMD[] = "btwardrive [-c]";
 const char PROGMEM HELP_BT_SKIM_CMD[] = "sniffskim";
 const char PROGMEM HELP_FOOT[] = "==================================";
 
+File file;
 
 class CommandLine {
   private:
@@ -174,7 +175,6 @@ class CommandLine {
         
   public:
     CommandLine();
-
     void RunSetup();
     void main(uint32_t currentTime);
 };

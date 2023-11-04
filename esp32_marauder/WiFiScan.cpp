@@ -102,25 +102,25 @@ extern "C" {
         if (wifi_scan_obj.currentScanMode == BT_SCAN_ALL) {
           if (buf >= 0)
           {
-            display_string.concat(text_table4[0]);
-            display_string.concat(advertisedDevice->getRSSI());
-            Serial.print(" RSSI: ");
-            Serial.print(advertisedDevice->getRSSI());
-    
-            display_string.concat(" ");
-            Serial.print(" ");
-            Serial.print("Device: ");
-            if(advertisedDevice->getName().length() != 0)
-            {
-              display_string.concat(advertisedDevice->getName().c_str());
-              Serial.println(advertisedDevice->getName().c_str());
-              
-            }
-            else
-            {
-              display_string.concat(advertisedDevice->getAddress().toString().c_str());
-              Serial.println(advertisedDevice->getAddress().toString().c_str());
-            }
+              // display_string.concat(text_table4[0]);
+              // display_string.concat(advertisedDevice->getRSSI());
+              // Serial.print(" RSSI: ");
+              // Serial.print(advertisedDevice->getRSSI());
+
+              // display_string.concat(" ");
+              // Serial.print(" ");
+              // Serial.print("Device: ");
+              // if(advertisedDevice->getName().length() != 0)
+              // {
+              //   display_string.concat(advertisedDevice->getName().c_str());
+              //   Serial.println(advertisedDevice->getName().c_str());
+                
+              // }
+              // else
+              // {
+              //   display_string.concat(advertisedDevice->getAddress().toString().c_str());
+              //   Serial.println(advertisedDevice->getAddress().toString().c_str());
+              // }
 
             String advData = bleAdvCapture(advertisedDevice);
             Serial.println(advData);

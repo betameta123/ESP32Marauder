@@ -382,9 +382,6 @@ void setup()
   
   Serial.println(F("CLI Ready"));
   cli_obj.RunSetup();
-  if(!SPIFFS.begin(true)) {
-    Serial.println("Failed to mount SPIFFS");
-  }
 }
 
 
